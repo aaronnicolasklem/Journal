@@ -9,6 +9,8 @@ const worldRouter= require(`./routes/worldRouter`);
 const refsRouter= require(`./routes/refsRouter`);
 
 app.use ('/api/v1/oracle',oracleRouter);
+app.use ('/api/v1/world',worldRouter);
+app.use ('/api/v1/refs',refsRouter);
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/index.html'));
