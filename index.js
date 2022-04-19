@@ -13,7 +13,7 @@ app.use ('/api/v1/world',worldRouter);
 app.use ('/api/v1/refs',refsRouter);
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join(__dirname, 'public/pages/index.html'));
   });
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
