@@ -5,8 +5,8 @@ const path = require('path');
 const data="";
 // JSON.parse( fs.readFileSync(`${__dirname}/dev-data/tours-simple.json`));
 const getPage=(req,res)=>{
-    var id = req.params.id;
-    res.sendFile(path.join(__dirname, `../public/pages/oracle/oracle${id}.html`));
+    var page = req.params.page;
+    res.sendFile(path.join(__dirname, `../public/pages/oracle/oracle${page}.html`));
 };
 const getPrompt=(req,res)=>{
     res.status(200).json({
@@ -40,7 +40,9 @@ const getSpecificPrompt = (req, res) => {
 
 }
 
+const serveStatic=(req,res)=>{
 
+};
 
 ////////////////////////
 router
@@ -49,8 +51,10 @@ router
     .post(createPrompt);
 
 router
-    .route('/:id')
+    .route('/:page')
     .get(getPage)
     .patch(updatePrompt)
     .delete(deletePrompt);
-module.exports = router;
+
+
+    module.exports = router;
